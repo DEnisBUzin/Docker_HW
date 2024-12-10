@@ -1,0 +1,11 @@
+# Используем базовый образ nginx
+FROM nginx:latest
+
+# Копируем кастомную страницу в папку Nginx
+COPY index.html /usr/share/nginx/html/index.html
+
+# Копируем конфигурацию
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Порт для сервера
+EXPOSE 80
